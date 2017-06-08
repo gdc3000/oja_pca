@@ -22,7 +22,7 @@ def import_data():
 #Demo functions using real data
 if __name__ == '__main__':
     np.random.seed(1)
-    #X, Y = import_data()
+    X, Y = import_data()
     n, d = X.shape
     a0 = np.random.randn(d)
     a0 = a0 / np.linalg.norm(a0, axis=0)
