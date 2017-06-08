@@ -1,3 +1,5 @@
+README
+
 The functions in oja_pca.py and the demo files provide an implementation of principal component analysis 
 on a given dataset using the oja algorithm.
 
