@@ -81,10 +81,12 @@ class ojaPCA:
         l = pca_results.shape[1]
         pca = PCA(l, svd_solver='randomized')
         pca.fit_transform(X)    
-
+        
         for i in range(0,l):
             print('Oja alg PCA ',i,' results:',oja_pca[:,i])
             print('SKLearn PCA ',i,' results:',pca.components_[i])
+            print('Oja alg PC max eigenvalue of component',i,':',pca_lambdas[0,i])
+            print('SKLearn PC max eigenvalue of component',i,':',pca.explained_variance_[i])
 
     #Function to compute how many PCA vectors it takes to identify target percent of variance
     #Inputs: Results of PCA, maximum eigenvalues of each principal component, target explained variance %.
@@ -106,6 +108,7 @@ class ojaPCA:
     #Output: Plot of variance explained
     def plot_PCA_Variance(pca_lambdas):
         #Initialize values
+        pca_lambdas = pca_lambdas.flatten()
         l = pca_lambdas.shape[0]
         tot_var = np.sum(pca_lambdas)
         comp_var = 0
