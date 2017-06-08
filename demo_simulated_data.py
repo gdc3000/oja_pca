@@ -39,20 +39,3 @@ if __name__ == '__main__':
     #Print results
     print("1st principal component:")
     print(oja_pca[0])
-
-
-# In[65]:
-
-#Generate PCA values of simulated dataset and compare results wiht SKLearn
-oja_pca, oja_pca_lambda = pcaGenerate(eta0=.01,X=Z,t0=1,cycle_max=50,pcCount=d)
-
-#Print Principal component vectors from my oja algorithm and SKLearn
-print('Compare results of PCA with SKLearn:')
-pcaCompare(s[:,1:51],oja_pca[:,0:d],oja_pca_lambda[0:d])
-plot_PCA_Variance(oja_pca_lambda)
-
-
-# In[ ]:
-
-
-
